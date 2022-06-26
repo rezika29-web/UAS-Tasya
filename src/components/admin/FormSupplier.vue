@@ -6,16 +6,16 @@
             </v-card-title>
             <v-form>
             <v-card-text>
-                    <v-text-field label="Nama Obat" v-model="mutableContent.nama_obat"></v-text-field>
-                    <input type="file" @change="imageChanged" />
-                    <v-text-field label="Harga Jual" v-model="mutableContent.harga_jual"></v-text-field>
-                    <v-text-field label="Harga Beli" v-model="mutableContent.harga_beli"></v-text-field>
-                    <v-text-field label="Stok" v-model="mutableContent.stok"></v-text-field>
+                    <v-text-field label="Nama Supplier" v-model="mutableContent.nama_supplier"></v-text-field>                 
+                    <v-text-field label="Alamat" v-model="mutableContent.alamat"></v-text-field>
+                    <v-text-field label="Nomor HP" v-model="mutableContent.no_hp"></v-text-field>
+                     <v-autocomplete v-model="mutableContent.jenis_kelamin" :items="itemss" label="Jenis Kelamin"></v-autocomplete>
+                     <v-date-picker label="Tanggal Lahir" v-model="mutableContent.tanggal_lahir"></v-date-picker>
             </v-card-text>
             <v-card-actions>
                 <v-spacer></v-spacer>
                 <v-btn color="success" @click="action">Save</v-btn>
-                <v-btn color="warning" to="/admin/content">Cancel</v-btn>
+                <v-btn color="warning" to="/admin/daftarSupplier">Cancel</v-btn>
             </v-card-actions>
             </v-form>
         </v-card>
@@ -28,6 +28,7 @@ export default {
         return{
             'mutableContent' : this.content,
             selectedFile : null,
+            itemss: ['Laki-Laki', 'Perempuan'],
         }
     },
     props:[
@@ -39,7 +40,6 @@ export default {
         upload(e){
             let img = e.target.files[0]
             let fd = new FormData()
-            // console.log(fd)
 
             fd.append('gambar_obat',img)
         },
@@ -63,7 +63,7 @@ export default {
             }
         },
         imageChanged(e){
-            // console.log(e.target.files[0])
+            console.log(e.target.files[0])
             var fileReader = new FileReader()
             fileReader.readAsDataURL(e.target.files[0])
             fileReader.onload = (e) => {

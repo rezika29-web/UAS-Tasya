@@ -89,17 +89,17 @@ export default {
                {
               icon: "assignment",
               text: "Daftar Supplier",
-              to: "/admin/content"
+              to: "/admin/daftarsupplier"
             },
                {
               icon: "assignment",
               text: "Barang Keluar",
-              to: "/admin/content"
+              to: "/admin/barangkeluar"
             },
                {
               icon: "assignment",
               text: "Barang Masuk",
-              to: "/admin/content"
+              to: "/admin/barangmasuk"
             },
           ]
         },

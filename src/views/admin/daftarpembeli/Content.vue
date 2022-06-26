@@ -16,7 +16,7 @@
                 <td>
                    <v-tooltip left>
                         <v-btn fab dark small color="cyan" slot="activator"
-                        :to='"/admin/daftarpembeli/"+props.props.item.id+"/edit"'>
+                        :to='"/admin/daftarpembeli/"+props.props.item.id_pembeli+"/edit"'>
                             <v-icon small dark>edit</v-icon>
                         </v-btn>
                         <span>Edit</span>
@@ -89,8 +89,8 @@ export default {
     },
     methods:{
          del(val){
-        console.log("hapus")
-        api.deleteApi('/content',val.id)
+        console.log(val.id_pembeli)
+        api.deleteApi('/pembeli/delete.php',{id_pembeli:val.id_pembeli})
         .then(
           this.getAll()
         )

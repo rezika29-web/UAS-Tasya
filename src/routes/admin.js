@@ -46,7 +46,43 @@ export default {
             name: 'daftarpembeli-edit',
             component: () => import('@/views/admin/daftarpembeli/edit.vue')
         },
-       
+        {
+            path: 'daftarsupplier',
+            name: 'daftarsupplier',
+            component: () => import('@/views/admin/daftarsupplier/Content.vue'),
+        },
+        {
+            path: 'daftarsupplier/add',
+            name: 'daftarsupplier-add',
+            component: () => import('@/views/admin/daftarsupplier/input.vue')
+        },
+        {
+            path: 'daftarsupplier/:id/edit',
+            name: 'daftarsupplier-edit',
+            component: () => import('@/views/admin/daftarsupplier/edit.vue')
+        },
+
+        {
+            path: 'barangmasuk',
+            name: 'barangmasuk',
+            component: () => import('@/views/admin/barangmasuk/Content.vue'),
+        },
+        {
+            path: 'barangmasuk/add',
+            name: 'barangmasuk-add',
+            component: () => import('@/views/admin/barangmasuk/input.vue')
+        },
+
+        {
+            path: 'barangkeluar',
+            name: 'barangkeluar',
+            component: () => import('@/views/admin/barangkeluar/Content.vue'),
+        },
+        {
+            path: 'barangkeluar/add',
+            name: 'barangkeluar-add',
+            component: () => import('@/views/admin/barangkeluar/input.vue')
+        },
 
       
 
