@@ -81,7 +81,26 @@ export default {
               text: "Stok Obat",
               to: "/admin/content"
             },
-           
+              {
+              icon: "assignment",
+              text: "Daftar Pembeli",
+              to: "/admin/content"
+            },
+               {
+              icon: "assignment",
+              text: "Daftar Supplier",
+              to: "/admin/content"
+            },
+               {
+              icon: "assignment",
+              text: "Barang Keluar",
+              to: "/admin/content"
+            },
+               {
+              icon: "assignment",
+              text: "Barang Masuk",
+              to: "/admin/content"
+            },
           ]
         },
         

@@ -1,6 +1,5 @@
 const config = {
-    // serverUrl: 'http://localhost/api/public/api/',
-    serverUrl: 'http://rabies.padangpariamankab.go.id/api/public/api/',
+    serverUrl: 'http://localhost/stok_obat/data/obat/',
     clientSecret: 'CATkJdxvPhGE8DLgjqkEXgiQ0AiTCDFvyVcIaR3b',
 }
 
