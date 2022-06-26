@@ -6,16 +6,16 @@
             </v-card-title>
             <v-form>
             <v-card-text>
-                    <v-text-field label="Nama Obat" v-model="mutableContent.nama_obat"></v-text-field>
-                    <input type="file" @change="imageChanged" />
-                    <v-text-field label="Harga Jual" v-model="mutableContent.harga_jual"></v-text-field>
-                    <v-text-field label="Harga Beli" v-model="mutableContent.harga_beli"></v-text-field>
-                    <v-text-field label="Stok" v-model="mutableContent.stok"></v-text-field>
+                    <v-text-field label="Nama Pembeli" v-model="mutableContent.nama_pembeli"></v-text-field>                 
+                    <v-text-field label="Alamat" v-model="mutableContent.alamat"></v-text-field>
+                    <v-text-field label="Nomor HP" v-model="mutableContent.no_hp"></v-text-field>
+                     <v-autocomplete v-model="mutableContent.jenis_kelamin" :items="itemss" label="Jenis Kelamin"></v-autocomplete>
+                     <v-date-picker label="Tanggal Lahir" v-model="mutableContent.tanggal_lahir"></v-date-picker>
             </v-card-text>
             <v-card-actions>
                 <v-spacer></v-spacer>
                 <v-btn color="success" @click="action">Save</v-btn>
-                <v-btn color="warning" to="/admin/content">Cancel</v-btn>
+                <v-btn color="warning" to="/admin/daftarPembeli">Cancel</v-btn>
             </v-card-actions>
             </v-form>
         </v-card>
@@ -28,6 +28,7 @@ export default {
         return{
             'mutableContent' : this.content,
             selectedFile : null,
+            itemss: ['Laki-Laki', 'Perempuan'],
         }
     },
     props:[

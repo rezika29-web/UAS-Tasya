@@ -84,7 +84,7 @@ export default {
               {
               icon: "assignment",
               text: "Daftar Pembeli",
-              to: "/admin/content"
+              to: "/admin/daftarpembeli"
             },
                {
               icon: "assignment",

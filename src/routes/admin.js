@@ -25,9 +25,26 @@ export default {
             component: () => import('@/views/admin/content/input.vue')
         },
         {
-            path: 'report',
-            name: 'report',
-            component: () => import('@/views/admin/content/Report.vue'),
+            path: 'content/:id/edit',
+            name: 'content-edit',
+            component: () => import('@/views/admin/content/edit.vue')
+        },
+
+        
+        {
+            path: 'daftarpembeli',
+            name: 'daftarpembeli',
+            component: () => import('@/views/admin/daftarpembeli/Content.vue'),
+        },
+        {
+            path: 'daftarpembeli/add',
+            name: 'daftarpembeli-add',
+            component: () => import('@/views/admin/daftarpembeli/input.vue')
+        },
+        {
+            path: 'daftarpembeli/:id/edit',
+            name: 'daftarpembeli-edit',
+            component: () => import('@/views/admin/daftarpembeli/edit.vue')
         },
        
 

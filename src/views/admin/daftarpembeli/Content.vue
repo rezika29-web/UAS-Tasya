@@ -1,22 +1,22 @@
 <template>
     <div>
-        <v-btn color="primary" to="/admin/content/add">
+        <v-btn color="primary" to="/admin/daftarpembeli/add">
             <v-icon>add</v-icon>
-            Tambah Stok Obat
+            Tambah Pembeli
         </v-btn>
         <br/><br/>
         <div>
         <data-table :headers='headers' :items='datas' :search.sync='cari'>
             <template slot="field" slot-scope="props" height="300px" width="500px">
-                <td class="text-md-left">{{ props.props.item.nama_obat }}</td>
-                <td class="text-md-left">{{ props.props.item.gambar_obat }}</td>
-                <td class="text-md-left">{{ props.props.item.harga_jual }}</td>
-                <td class="text-md-left">{{ props.props.item.harga_beli }}</td>
-                <td class="text-md-left">{{ props.props.item.stok }}</td>
+                <td class="text-md-left">{{ props.props.item.nama_pembeli }}</td>
+                <td class="text-md-left">{{ props.props.item.alamat }}</td>
+                <td class="text-md-left">{{ props.props.item.no_hp }}</td>
+                <td class="text-md-left">{{ props.props.item.jenis_kelamin }}</td>
+                <td class="text-md-left">{{ props.props.item.tanggal_lahir}}</td>
                 <td>
                    <v-tooltip left>
                         <v-btn fab dark small color="cyan" slot="activator"
-                        :to='"/admin/content/"+props.props.item.id+"/edit"'>
+                        :to='"/admin/daftarpembeli/"+props.props.item.id+"/edit"'>
                             <v-icon small dark>edit</v-icon>
                         </v-btn>
                         <span>Edit</span>
@@ -48,11 +48,11 @@ export default {
         return{
             cari: '',
             headers: [
-                { text: 'Nama Obat', value: 'Nama Obat' },
-                { text: 'Gambar', value: 'Gambar' },
-                { text: 'Harga Jual', value: 'Harga Jual' },
-                { text: 'Harga Beli', value: 'Harga Beli' },
-                { text: 'Stok', value: 'Stok' },
+                { text: 'Nama Pembeli', value: 'Nama Pembeli' },
+                { text: 'Alamat', value: 'Alamat' },
+                { text: 'No HP', value: 'No HP' },
+                { text: 'Jenis Kelamin', value: 'Jenis Kelamin' },
+                { text: 'Tanggal Lahir', value: 'Tanggal Lahir' },
                 { text: 'Aksi', value: 'Aksi' },
 
             ],
@@ -66,16 +66,16 @@ export default {
                     href: '/admin/dashboard'
                 },
                 {
-                    text: 'Content',
+                    text: 'DaftarPembeli',
                     disabled: true,
-                    href: '/admin/content'
+                    href: '/admin/daftarpembeli'
                 },
             ]
         }
     },
     created(){
       // api.getApi(`/datacontent/${ this.$auth.getUser()}`)
-      api.getApi('/obat/read.php')
+      api.getApi('/pembeli/read.php')
       .then(r=>{
         this.datas = r.data.data
         console.log(r)
@@ -100,7 +100,7 @@ export default {
       },
       getAll(){
       // api.getApi(`/datacontent/${ this.$auth.getUser()}`)
-        api.getApi('/obat/read.php')
+        api.getApi('/pembeli/read.php')
         .then(r=>{
           this.datas = r.data.data
           // this.datas = r.data

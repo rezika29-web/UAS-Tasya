@@ -1,7 +1,7 @@
 <template>
     <div>
         <form-data
-        :title="'Tambah Surat Rujukan'"
+        :title="'Tambah Stok Obat'"
         :content="content"
         :action="saveData"></form-data>
     </div>
@@ -14,22 +14,11 @@ export default {
     data(){
         return{
             'content':{
-                'name':'',
-                'namapasien':'',
-                'umur':'',
-                'jeniskelamin':'',
-                'alamat':'',
-                'hewan':'',
-                'lokasi':'',
-                'tanggaltergigit':'',
-                'status':'',
-                'statushewan':'',
-                'var':'',
-                'pernahvar':'',
-                'description':'',
-                // 'aksi':'',
-                'id_user':'',
-                // 'image':'',
+                'nama_obat':'',
+                'gambar_obat':'',
+                'harga_jual':'',
+                'harga_beli':'',
+                'stok':'',
             }
         }
     },
@@ -38,24 +27,12 @@ export default {
     },
     methods:{
         saveData(){
-          api.postApi('/content',{
-            name:this.content.name,
-            namapasien:this.content.namapasien,
-            umur:this.content.umur,
-            jeniskelamin:this.content.jeniskelamin,
-            alamat:this.content.alamat,
-            hewan:this.content.hewan,
-            lokasi:this.content.lokasi,
-            tanggaltergigit:this.content.tanggaltergigit,
-            status:this.content.status,
-            statushewan:this.content.statushewan,
-            var:this.content.var,
-            pernahvar:this.content.pernahvar,
-            description:this.content.description,
-            // aksi:this.content.aksi,
-             id_user  : this.$auth.getUser(),
-            //   image : this.content.image,
-
+          api.postApi('obat/create.php',{
+            nama_obat:this.content.nama_obat,
+            gambar_obat:this.content.gambar_obat,
+            harga_jual:this.content.harga_jual,
+            harga_beli:this.content.harga_beli,
+            stok:this.content.stok,
           })
           .then(r=>{
               console.log(r.statusText)

@@ -1,5 +1,5 @@
 const config = {
-    serverUrl: 'http://localhost/stok_obat/data/obat/',
+    serverUrl: 'http://localhost/stok_obat/data/',
     clientSecret: 'CATkJdxvPhGE8DLgjqkEXgiQ0AiTCDFvyVcIaR3b',
 }
 
