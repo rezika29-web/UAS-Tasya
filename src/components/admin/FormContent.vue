@@ -41,10 +41,10 @@ export default {
             let fd = new FormData()
             // console.log(fd)
             fd.append('gambar_obat',gambar_obat)
-            fd.append('nama_obat',nama_obat)
-            fd.append('harga_jual',harga_jual)
-            fd.append('harga_beli',harga_beli)
-            fd.append('stok',stok)
+            // fd.append('nama_obat',nama_obat)
+            // fd.append('harga_jual',harga_jual)
+            // fd.append('harga_beli',harga_beli)
+            // fd.append('stok',stok)
             // axios.post('/obat/create.php', fd)
             //     .then(resp => {
             //     this.imagePath = resp.data.path

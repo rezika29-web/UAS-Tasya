@@ -16,7 +16,7 @@
                 <td>
                    <v-tooltip left>
                         <v-btn fab dark small color="cyan" slot="activator"
-                        :to='"/admin/daftarsupplier/"+props.props.item.id+"/edit"'>
+                        :to='"/admin/daftarsupplier/"+props.props.item.id_supplier+"/edit"'>
                             <v-icon small dark>edit</v-icon>
                         </v-btn>
                         <span>Edit</span>
@@ -40,6 +40,7 @@
 
 import api from '@/common/api.services' 
 import pdf from 'vue-pdf'
+var qs = require('qs');
 
 
 export default {
@@ -90,7 +91,7 @@ export default {
     methods:{
          del(val){
         console.log("hapus")
-        api.deleteApi('/content',val.id)
+        api.deleteApi('/supplier/delete.php',qs.stringify({'id_supplier': val.id_supplier}))
         .then(
           this.getAll()
         )

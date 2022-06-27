@@ -28,13 +28,15 @@ export default {
     methods:{
         saveData(){
             console.log(this.content.nama_pembeli)
-            api.postApi('/pembeli/create.php',{
+            api.postApi('/pembeli/create.php',qs.stringify
+            ({
             nama_pembeli:this.content.nama_pembeli,
             alamat:this.content.alamat,
             no_hp:this.content.no_hp,
             jenis_kelamin:this.content.jenis_kelamin,
             tanggal_lahir:this.content.tanggal_lahir
           })
+          )
           .then(r=>{
               console.log(r.statusText)
               this.$router.push('/admin/daftarpembeli')
