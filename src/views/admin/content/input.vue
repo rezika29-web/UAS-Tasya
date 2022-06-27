@@ -9,6 +9,7 @@
 
 <script>
 import api from '@/common/api.services'
+var qs = require('qs');
 
 export default {
     data(){
@@ -27,13 +28,15 @@ export default {
     },
     methods:{
         saveData(){
-          api.postApi('obat/create.php',{
+          api.postApi('/obat/create.php',qs.stringify(
+          {
             nama_obat:this.content.nama_obat,
             gambar_obat:this.content.gambar_obat,
             harga_jual:this.content.harga_jual,
             harga_beli:this.content.harga_beli,
             stok:this.content.stok,
           })
+          )
           .then(r=>{
               console.log(r.statusText)
               this.$router.push('/admin/content')

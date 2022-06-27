@@ -40,6 +40,7 @@
 
 import api from '@/common/api.services' 
 import pdf from 'vue-pdf'
+var qs = require('qs');
 
 
 export default {
@@ -90,7 +91,7 @@ export default {
     methods:{
          del(val){
         console.log(val.id_pembeli)
-        api.deleteApi('/pembeli/delete.php',{id_pembeli:val.id_pembeli})
+        api.deleteApi('/pembeli/delete.php',qs.stringify({'id_pembeli': val.id_pembeli}))
         .then(
           this.getAll()
         )

@@ -90,7 +90,7 @@ export default {
     methods:{
          del(val){
         console.log("hapus")
-        api.deleteApi('/obat/delete.php',{body:{id_obat:val.id}})
+        api.deleteApi('/obat/delete.php',{body:{id_obat:val.id_obat}})
         .then(
           this.getAll()
         )

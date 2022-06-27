@@ -37,11 +37,19 @@ export default {
     ],
     methods:{
         upload(e){
-            let img = e.target.files[0]
+            let gambar_obat = e.target.files[0]
             let fd = new FormData()
             // console.log(fd)
+            fd.append('gambar_obat',gambar_obat)
+            fd.append('nama_obat',nama_obat)
+            fd.append('harga_jual',harga_jual)
+            fd.append('harga_beli',harga_beli)
+            fd.append('stok',stok)
+            // axios.post('/obat/create.php', fd)
+            //     .then(resp => {
+            //     this.imagePath = resp.data.path
+            //     })
 
-            fd.append('gambar_obat',img)
         },
         onFilePicked(e){
             const files = e.target.files
